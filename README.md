@@ -4,7 +4,7 @@ Simple tool to create components at current folder.
 
 Simple usage: 
 
-npm run create-component TextButton
+```npm run create-component TextButton```
 
 you should get as return 
 
