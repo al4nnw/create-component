@@ -1,0 +1,14 @@
+{
+  "name": "create-component",
+  "version": "1.0.0",
+  "description": "Tool used to easily create components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "yargs": "^17.7.1"
+  }
+}
