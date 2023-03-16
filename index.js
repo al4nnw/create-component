@@ -27,6 +27,4 @@ yargs
 	)
 	.demandCommand(1, "Please provide a valid command")
 	.help()
-	.parseAsync()
-	.then(() => console.log("End of file"))
-	.catch((err) => console.error(err));
+	.parse();
