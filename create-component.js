@@ -1,24 +1,25 @@
 const fs = require("fs");
-const path = require("path");
+const p = require("path");
 
-async function createComponent(name) {
+async function createComponent(name, path) {
+	console.log(`Creating component ${name}`);
 	try {
 		// Find the current working directory and create a "components" folder inside it
-		const cwd = process.cwd();
-		const componentsDir = path.join(cwd, "components");
+		const componentsDir = path;
+
 		if (!fs.existsSync(componentsDir)) {
 			fs.mkdirSync(componentsDir);
 		}
 
 		// Create a new folder for the component inside the "components" folder
-		const componentDir = path.join(componentsDir, name);
+		const componentDir = p.join(componentsDir, name);
 		if (!fs.existsSync(componentDir)) {
 			fs.mkdirSync(componentDir);
 		}
 
 		// Create the .tsx file with default component code
 		const tsxFileName = `${name}.tsx`;
-		const tsxFilePath = path.join(componentDir, tsxFileName);
+		const tsxFilePath = p.join(componentDir, tsxFileName);
 		if (!fs.existsSync(tsxFilePath)) {
 			const tsxFileContent = getDefaultTSXFileContent(name);
 			fs.writeFileSync(tsxFilePath, tsxFileContent);
@@ -29,7 +30,7 @@ async function createComponent(name) {
 
 		// Create the .module.scss file with empty content
 		const scssFileName = `${name}.module.scss`;
-		const scssFilePath = path.join(componentDir, scssFileName);
+		const scssFilePath = p.join(componentDir, scssFileName);
 		if (!fs.existsSync(scssFilePath)) {
 			fs.writeFileSync(scssFilePath, "");
 			console.log(`Created ${scssFilePath}`);
