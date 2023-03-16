@@ -1,12 +1,12 @@
-# create-component #
+# create-component
 
 Simple tool to create components at current folder.
 
-Simple usage: 
+Simple usage:
 
-```npm run create-component TextButton```
+`npm run create-component TextButton path/to/folder`
 
-you should get as return 
+you should get as return
 
 - Folder TextButton
   - TextButton.tsx
