@@ -50,7 +50,7 @@ function getDefaultTSXFileContent(name) {
 
 export interface ${name}Props {}
 
-export function ${name}({}: ${name}Props) {
+export function ${name}(props: ${name}Props) {
   return (
     <div className={styles.${name}}>
       <h1>${name}</h1>

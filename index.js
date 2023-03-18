@@ -26,5 +26,4 @@ yargs
 				.catch((err) => console.error(err))
 	)
 	.demandCommand(1, "Please provide a valid command")
-	.help()
 	.parse();
