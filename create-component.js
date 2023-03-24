@@ -32,7 +32,8 @@ async function createComponent(name, path) {
 		const scssFileName = `${name}.module.scss`;
 		const scssFilePath = p.join(componentDir, scssFileName);
 		if (!fs.existsSync(scssFilePath)) {
-			fs.writeFileSync(scssFilePath, "");
+			const scssFileContent = getDefaultSCSSFileContent();
+			fs.writeFileSync(scssFilePath, scssFileContent);
 			console.log(`Created ${scssFilePath}`);
 		} else {
 			console.log(`${scssFilePath} already exists`);
@@ -57,6 +58,10 @@ export function ${name}(props: ${name}Props) {
     </div>
   );
 }`;
+}
+
+function getDefaultSCSSFileContent(name) {
+	return `.${name} {}`;
 }
 
 module.exports = {
