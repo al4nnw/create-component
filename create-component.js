@@ -32,7 +32,7 @@ async function createComponent(name, path) {
 		const scssFileName = `${name}.module.scss`;
 		const scssFilePath = p.join(componentDir, scssFileName);
 		if (!fs.existsSync(scssFilePath)) {
-			const scssFileContent = getDefaultSCSSFileContent();
+			const scssFileContent = getDefaultSCSSFileContent(name);
 			fs.writeFileSync(scssFilePath, scssFileContent);
 			console.log(`Created ${scssFilePath}`);
 		} else {
